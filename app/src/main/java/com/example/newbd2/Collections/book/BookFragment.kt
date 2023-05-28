@@ -23,7 +23,7 @@ class BookFragment : Fragment() {
 //            requireActivity().goToFragment()
             Log.d("aaa","Click")
             //В конце рекуклера плюсик, который едиты добавляет
-            //минус,убирает
+            //минус,убирает s
         }
     )
 
