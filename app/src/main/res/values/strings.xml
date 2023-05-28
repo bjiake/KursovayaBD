@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">BD</string>
+    <array name="menuOptions">
+        <item>Book</item>
+        <item>Point issue</item>
+        <item>Read room</item>
+        <item>Reader card</item>
+        <item>Reader</item>
+    </array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="delete">Delete</string>
+</resources>
