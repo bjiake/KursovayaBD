@@ -33,8 +33,8 @@ class ReadRoomAdapter(
 class ReadRoomViewHolder(private val view: View) :
     RecyclerView.ViewHolder(view.rootView) {
     fun bind(readRoom: ReadRoomNW.ReadRoomNWItem) {
-        view.findViewById<TextView>(R.id.idPointIssue).text = readRoom._id.toString()
-        view.findViewById<TextView>(R.id.namePointIssue).text = readRoom.name
+        view.findViewById<TextView>(R.id.idReadRoom).text = readRoom._id.toString()
+        view.findViewById<TextView>(R.id.nameReadRoom).text = readRoom.name
         view.findViewById<TextView>(R.id.countReadRoom).text = readRoom.seatCount.toString()
     }
 }

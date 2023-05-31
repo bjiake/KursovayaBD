@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.newbd2.R
 
 class BookAdapter(
-    private val onBookClick: (bookExamplars: List<BookNW.BookNWItem.Copy>) -> Unit
+    private val onBookClick: (bookId: Int) -> Unit
 ) : ListAdapter<BookNW.BookNWItem, RecyclerView.ViewHolder>(BookDiffCallBack()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -22,7 +22,7 @@ class BookAdapter(
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         (holder as BookViewHolder).bind(getItem(position))
         holder.itemView.setOnClickListener {
-            onBookClick((getItem(position) as BookNW.BookNWItem).copies)
+            onBookClick((getItem(position) as BookNW.BookNWItem)._id)
         }
     }
     override fun getItemCount(): Int {

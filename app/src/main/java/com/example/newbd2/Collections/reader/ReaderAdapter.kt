@@ -10,19 +10,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.newbd2.R
 
 class ReaderAdapter(
-    private val onReaderClick: (reader: List<ReaderNW.ReaderNWItem.Reader>) -> Unit
+    private val onReaderClick: (reader: ReaderNW.ReaderNWItem.Reader) -> Unit
 ) : ListAdapter<ReaderNW.ReaderNWItem, RecyclerView.ViewHolder>(ReaderDiffCallBack()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_reader_card_holder, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.item_reader_holder, parent, false)
         return ReaderCardViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         (holder as ReaderCardViewHolder).bind(getItem(position))
         holder.itemView.setOnClickListener {
-//            onReaderClick((getItem(position) as ReaderNW.ReaderNWItem).reader)
+            onReaderClick((getItem(position) as ReaderNW.ReaderNWItem).reader)
         }
     }
     override fun getItemCount(): Int {
@@ -33,10 +33,9 @@ class ReaderAdapter(
 class ReaderCardViewHolder(private val view: View) :
     RecyclerView.ViewHolder(view.rootView) {
     fun bind(reader: ReaderNW.ReaderNWItem) {
-        view.findViewById<TextView>(R.id.idReaderCard).text = reader._id.toString()
-//        view.findViewById<TextView>(R.id.DateIssue).text = reader.DateIssue
-//        view.findViewById<TextView>(R.id.DateToReturn).text = reader.DateToReturn
-//        view.findViewById<TextView>(R.id.WhenReturnDate).text = reader.WhenReturnDate
+        view.findViewById<TextView>(R.id.idReader).text = reader._id.toString()
+        view.findViewById<TextView>(R.id.fullNameReader).text = reader.fullName
+        view.findViewById<TextView>(R.id.cardIdReader).text = reader.cardId.toString()
     }
 }
 class ReaderDiffCallBack: DiffUtil.ItemCallback<ReaderNW.ReaderNWItem>() {

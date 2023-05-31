@@ -2,17 +2,17 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_margin="10dp"
+    android:layout_height="wrap_content"
+    android:background="@color/purple_200">
 
     <EditText
         android:id="@+id/editBookCopiesId"
         android:layout_width="wrap_content"
-        android:layout_height="32dp"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:minHeight="32dp"
-        android:minWidth="32dp"
-        android:text="id"/>
+        />
 
     <EditText
         android:id="@+id/editBookCopiesReturnDate"
@@ -22,7 +22,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:minHeight="48dp"
         android:minWidth="32dp"
-        android:text="ReturnDate"/>
+        />
 
     <EditText
         android:id="@+id/editBookCopiesBorrowDate"
@@ -32,7 +32,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:minHeight="48dp"
         android:minWidth="32dp"
-        android:text="BorrowDate"/>
+        />
 
     <EditText
         android:id="@+id/editBookCopiesPointId"
@@ -42,15 +42,24 @@
         app:layout_constraintStart_toStartOf="parent"
         android:minHeight="48dp"
         android:minWidth="32dp"
-        android:text="PointId"/>
+        />
+
+    <Button
+        android:id="@+id/editBtnBookCopies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="15dp"
+        android:text="Редактировать"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editBookCopiesPointId" />
 
     <Button
         android:id="@+id/deleteBtnBookCopies"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/delete"
+        android:text="Удалить"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editBtnBookCopies"
         app:layout_constraintTop_toBottomOf="@+id/editBookCopiesPointId" />
 
 

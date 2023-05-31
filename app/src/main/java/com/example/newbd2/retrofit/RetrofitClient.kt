@@ -10,6 +10,7 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 interface RetrofitAPI {
     companion object{
@@ -25,15 +26,21 @@ interface RetrofitAPI {
     @GET("collectionsGet/books")
     fun getAllBooks(): Call<BookNW>
 
-    @GET("collectionsGet/CollectionPointIssue")
+    @GET("collectionsGet/pointIssue")
     fun getAllPointIssue() : Call<PointIssueNW>
 
-    @GET("collectionsGet/CollectionReadRooms")
+    @GET("collectionsGet/readRooms")
     fun getAllReadRooms() : Call<ReadRoomNW>
 
-    @GET("collectionsGet/CollectionReaderCards")
+    @GET("collectionsGet/readerCards")
     fun getAllReaderCard() : Call<ReaderCardNW>
 
-    @GET("collectionsGet/CollectionReaders")
+    @GET("collectionsGet/readers")
     fun getAllReader() : Call<ReaderNW>
+
+    @GET("collectionsGet/books/{id}")
+    fun getOneBookById(
+        @Path("id")
+        id:String
+    ): Call<BookNW>
 }

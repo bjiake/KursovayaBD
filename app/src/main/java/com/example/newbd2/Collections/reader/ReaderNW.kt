@@ -5,7 +5,7 @@ class ReaderNW(
 ){
     data class ReaderNWItem(
         val _id: Int,
-        val idReadRoom: Int,
+        val cardId: Int,
         val fullName: String,
         val reader: Reader
     ){

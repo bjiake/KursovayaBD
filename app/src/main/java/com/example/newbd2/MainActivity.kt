@@ -6,6 +6,10 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import com.example.newbd2.Collections.book.BookFragment
+import com.example.newbd2.Collections.book.PointIssueFragment
+import com.example.newbd2.Collections.book.ReaderCardFragment
+import com.example.newbd2.Collections.book.ReaderFragment
+import com.example.newbd2.Collections.book.ReaderRoomFragment
 import com.example.newbd2.Collections.goToFragment
 import com.example.newbd2.retrofit.RetrofitAPI
 import nl.psdcompany.duonavigationdrawer.views.DuoDrawerLayout
@@ -84,6 +88,11 @@ class MainActivity : AppCompatActivity(), DuoMenuView.OnMenuClickListener {
         // Тут вставлять нужный фрагмент, в зависимости от позиции
         mMenuAdapter!!.setViewSelected(position, true)
         when (position) {
+            0 -> goToFragment(BookFragment(), false)
+            1 -> goToFragment(PointIssueFragment(),false)
+            2 -> goToFragment(ReaderRoomFragment(),false)
+            3 -> goToFragment(ReaderCardFragment(),false)
+            4 -> goToFragment(ReaderFragment(), false)
             else -> goToFragment(BookFragment(), false)
         }
 

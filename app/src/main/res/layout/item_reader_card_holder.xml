@@ -10,44 +10,44 @@
         android:layout_height="wrap_content"
         android:text="idReaderCard"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/DateIssue"
+        app:layout_constraintEnd_toStartOf="@+id/DateIssueReaderCard"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/DateIssue"
+        android:id="@+id/DateIssueReaderCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="DateIssue"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/DateToReturn"
+        app:layout_constraintEnd_toStartOf="@+id/DateToReturnReaderCard"
         app:layout_constraintStart_toEndOf="@+id/idReaderCard"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/DateToReturn"
+        android:id="@+id/DateToReturnReaderCard"
         android:text="DateToReturn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/WhenReturnDate"
-        app:layout_constraintStart_toEndOf="@+id/DateIssue"
+        app:layout_constraintEnd_toStartOf="@+id/WhenReturnDateReaderCard"
+        app:layout_constraintStart_toEndOf="@+id/DateIssueReaderCard"
         app:layout_constraintTop_toTopOf="parent"
 
         />
 
     <TextView
-        android:id="@+id/WhenReturnDate"
+        android:id="@+id/WhenReturnDateReaderCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="WhenReturnDate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/DateToReturn"
+        app:layout_constraintStart_toEndOf="@+id/DateToReturnReaderCard"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
