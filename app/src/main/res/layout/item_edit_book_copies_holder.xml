@@ -5,14 +5,28 @@
     android:layout_margin="10dp"
     android:layout_height="wrap_content"
     android:background="@color/purple_200">
+    <TextView
+        android:id="@+id/editTextBookCopiesId"
+        android:text="@string/idString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
         android:id="@+id/editBookCopiesId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextBookCopiesId"
         />
+    <TextView
+        android:id="@+id/editTextBookCopiesReturnDate"
+        android:text="@string/time_to_return_book"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editBookCopiesId"/>
 
     <EditText
         android:id="@+id/editBookCopiesReturnDate"
@@ -23,22 +37,34 @@
         android:minHeight="48dp"
         android:minWidth="32dp"
         />
-
+    <TextView
+        android:id="@+id/editTextBookCopiesBorrowDate"
+        android:text="@string/date_issue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editBookCopiesReturnDate"/>
     <EditText
         android:id="@+id/editBookCopiesBorrowDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/editBookCopiesReturnDate"
+        app:layout_constraintTop_toBottomOf="@+id/editTextBookCopiesBorrowDate"
         app:layout_constraintStart_toStartOf="parent"
         android:minHeight="48dp"
         android:minWidth="32dp"
         />
-
+    <TextView
+        android:id="@+id/editTextBookCopiesPointId"
+        android:text="Point ID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editBookCopiesBorrowDate"/>
     <EditText
         android:id="@+id/editBookCopiesPointId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/editBookCopiesBorrowDate"
+        app:layout_constraintTop_toBottomOf="@+id/editTextBookCopiesPointId"
         app:layout_constraintStart_toStartOf="parent"
         android:minHeight="48dp"
         android:minWidth="32dp"

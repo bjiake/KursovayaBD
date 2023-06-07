@@ -9,7 +9,10 @@ import com.example.newbd2.Constants
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
+import retrofit2.http.PUT
 import retrofit2.http.Path
 
 interface RetrofitAPI {
@@ -43,4 +46,23 @@ interface RetrofitAPI {
         @Path("id")
         id:String
     ): Call<BookNW>
+
+    @GET("/collectionsDelete/books/{id}")
+    fun deleteOneBookById(
+        @Path("id")
+        id:String
+    ):Call<BookNW>
+    @POST("/collectionsPost/books")
+    fun postBook(
+        @Body
+        book:BookNW
+    ):Call<BookNW>
+
+    @PUT("/collectionsPut/books/{id}")
+    fun putBook(
+        @Path("id")
+        id: String,
+        @Body
+        book: BookNW.BookNWItem
+    ):Call<BookNW.BookNWItem>
 }

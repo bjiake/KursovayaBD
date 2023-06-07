@@ -5,15 +5,15 @@ data class BookNW(
 ){
     data class BookNWItem(
         val _id: Int,
-        val author: String,
+        var author: String,
         val copies: List<Copy>,
-        val loanDuration: Int,
-        val name: String,
-        val year: Int,
-        val yearAcquired: Int
+        var loanDuration: Int,
+        var name: String,
+        var year: Int,
+        var yearAcquired: Int
     ){
         data class Copy(
-            val _id: Int,
+            var _id: Int,
             val borrowDate: String,
             val pointId: Int,
             val returnDate: String

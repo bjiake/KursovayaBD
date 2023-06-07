@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="idString">ID</string>
+    <string name="name">Name</string>
+    <string name="author">Author</string>
+    <string name="year_release_book">Year release book</string>
+    <string name="date_issue">Date issue</string>
+</resources>
