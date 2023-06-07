@@ -5,9 +5,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.newbd2.Collections.book.Add.BookItemAddFragment
 import com.example.newbd2.Collections.book.item.BookItemFragment
 import com.example.newbd2.Collections.goToFragment
 import com.example.newbd2.R
@@ -28,7 +31,7 @@ class BookFragment : Fragment() {
             bundle.putString("bookId", it.toString())
             val bookItemFragment = BookItemFragment()
             bookItemFragment.arguments = bundle
-            requireActivity().goToFragment(bookItemFragment, false)
+            requireActivity().goToFragment(bookItemFragment, true)
 
             //В конце рекуклера плюсик, который едиты добавляет
             //минус,убирает s
@@ -50,6 +53,15 @@ class BookFragment : Fragment() {
         rvbook = view.findViewById(R.id.rvBook)
         recyclerViewInit()
         loadAllBooks()
+        addBtn()
+    }
+    private fun addBtn(){
+        val addBtn = view?.findViewById<Button>(R.id.bookBtnAdd)
+        addBtn?.setOnClickListener {
+            Log.d("aaa","Click")
+            val bookItemFragment = BookItemAddFragment()
+            requireActivity().goToFragment(bookItemFragment, true)
+        }
     }
     //Найти ссылки на указание время работы ide
 
@@ -67,11 +79,9 @@ class BookFragment : Fragment() {
                         adapter.submitList(respone)
                     }
                 }
-
                 override fun onFailure(call: Call<BookNW>, t: Throwable) {
                     Log.e("aaa", "$t")
                 }
-
             })
     }
 }

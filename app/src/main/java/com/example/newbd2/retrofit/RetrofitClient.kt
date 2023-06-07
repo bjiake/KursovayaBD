@@ -65,4 +65,10 @@ interface RetrofitAPI {
         @Body
         book: BookNW.BookNWItem
     ):Call<BookNW.BookNWItem>
+
+    @POST("/collectionsPost/books")
+    fun postBook(
+        @Body
+        book: BookNW.BookNWItem
+    ):Call<BookNW.BookNWItem>
 }

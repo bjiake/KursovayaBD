@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+    <Button
+        android:id="@+id/bookCopyAddApply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apply"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bookCopyAddDeny"/>
+
+    <Button
+        android:id="@+id/bookCopyAddDeny"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deny"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bookCopyAddApply"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/bookCopyAddEditTextBookCopiesId"
+        android:text="@string/idString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bookCopyAddDeny"/>
+
+    <EditText
+        android:id="@+id/bookCopyAddEditBookCopiesId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bookCopyAddEditTextBookCopiesId"
+        />
+    <TextView
+        android:id="@+id/bookCopyAddEditTextBookCopiesReturnDate"
+        android:text="@string/time_to_return_book"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bookCopyAddEditBookCopiesId"/>
+
+    <EditText
+        android:id="@+id/bookCopyAddEditBookCopiesReturnDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/bookCopyAddEditTextBookCopiesReturnDate"
+        app:layout_constraintStart_toStartOf="parent"
+        android:minHeight="48dp"
+        android:minWidth="32dp"/>
+    <TextView
+        android:id="@+id/bookCopyAddEditTextBookCopiesBorrowDate"
+        android:text="@string/date_issue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bookCopyAddEditBookCopiesReturnDate"/>
+    <EditText
+        android:id="@+id/bookCopyAddEditBookCopiesBorrowDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/bookCopyAddEditTextBookCopiesBorrowDate"
+        app:layout_constraintStart_toStartOf="parent"
+        android:minHeight="48dp"
+        android:minWidth="32dp"
+        />
+    <TextView
+        android:id="@+id/bookCopyAddEditTextBookCopiesPointId"
+        android:text="Point ID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bookCopyAddEditBookCopiesBorrowDate"/>
+    <EditText
+        android:id="@+id/bookCopyAddEditBookCopiesPointId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/bookCopyAddEditTextBookCopiesPointId"
+        app:layout_constraintStart_toStartOf="parent"
+        android:minHeight="48dp"
+        android:minWidth="32dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

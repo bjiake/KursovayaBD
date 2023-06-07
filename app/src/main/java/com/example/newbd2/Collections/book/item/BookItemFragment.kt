@@ -11,7 +11,10 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.newbd2.Collections.book.Add.BookItemAddFragment
+import com.example.newbd2.Collections.book.Add.BookItemCopyAddFragment
 import com.example.newbd2.Collections.book.BookNW
+import com.example.newbd2.Collections.goToFragment
 import com.example.newbd2.R
 import com.example.newbd2.retrofit.RetrofitAPI
 import retrofit2.Call
@@ -28,13 +31,18 @@ class BookItemFragment(): Fragment() {
             }
             newBookItemCopies.add(newBook)
             bookItem = bookItem.copy(copies = newBookItemCopies)
+        },
+        onLongClickDelete = {bookCopyId ->
+            val newBookItemCopies = bookItem.copies.toMutableList()
+            newBookItemCopies.removeIf{
+                it._id == bookCopyId
+            }
+            bookItem = bookItem.copy(copies = newBookItemCopies)
+            updateListAdapter(newBookItemCopies)
+            Log.d("aaa", "deleted")
         }
     )
     private lateinit var bookItem: BookNW.BookNWItem
-    fun updateBookItem(bookCopy: BookNW.BookNWItem.Copy, position: Int) {
-        bookItem.copies[position]._id = bookCopy._id
-        // выполнение желаемых действий с новым значением
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -59,8 +67,29 @@ class BookItemFragment(): Fragment() {
         if (bookId != null){
             putBtn(bookId)
         }
-
+        initAddCopy()
     }
+    private fun updateListAdapter(newBookItemCopies: List<BookNW.BookNWItem.Copy>){
+        adapter.addItems(newBookItemCopies)
+    }
+    private fun initAddCopy(){
+        val btnAdd = view?.findViewById<Button>(R.id.addCopyBtnBook)
+        if (btnAdd != null) {
+            btnAdd.setOnClickListener {
+                Log.d("aaa","Click")
+                val bookItemFragment = BookItemCopyAddFragment(
+                    onBookItemCopyChange = { newBookCopy ->
+                        val newBookItemCopies = bookItem.copies.toMutableList()
+                        newBookItemCopies.add(newBookCopy)
+                        bookItem = bookItem.copy(copies = newBookItemCopies)
+                        updateListAdapter(newBookItemCopies)
+                    }
+                )
+                requireActivity().goToFragment(bookItemFragment, true)
+            }
+        }
+    }
+
     private fun putBtn(bookId: String){
         var btnPut = view?.findViewById<Button>(R.id.editBtnBook)
         val nameBook = view?.findViewById<EditText>(R.id.editNameBook)
@@ -132,11 +161,9 @@ class BookItemFragment(): Fragment() {
                     //Дополнить лэйаут
                     adapter.submitList(bookItem.copies)
                 }
-
                 override fun onFailure(call: Call<BookNW>, t: Throwable) {
                     TODO("Not yet implemented")
                 }
-
             })
     }
 }

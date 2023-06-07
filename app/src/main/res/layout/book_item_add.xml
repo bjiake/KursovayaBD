@@ -1,126 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@color/white">
 
     <Button
-        android:id="@+id/addCopyBtnBook"
+        android:id="@+id/bookItemAddApply"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="add copy"
+        android:text="Apply"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editBtnBook"/>
-    <Button
-        android:id="@+id/editBtnBook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Edit"
-        app:layout_constraintStart_toEndOf="@+id/addCopyBtnBook"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/deleteBtnBook"/>
+        app:layout_constraintEnd_toStartOf="@+id/bookItemAddDeny"/>
 
     <Button
-        android:id="@+id/deleteBtnBook"
+        android:id="@+id/bookItemAddDeny"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Delete"
+        android:text="Deny"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editBtnBook"
+        app:layout_constraintStart_toEndOf="@+id/bookItemAddApply"
         app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
-        android:id="@+id/editTextIdBook"
+        android:id="@+id/bookItemAddEditTextIdBook"
         android:text="@string/idString"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/deleteBtnBook"/>
+        app:layout_constraintTop_toBottomOf="@+id/bookItemAddApply"/>
     <EditText
-        android:id="@+id/editIdBook"
+        android:id="@+id/bookItemAddEditIdBook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextIdBook"/>
+        app:layout_constraintTop_toBottomOf="@+id/bookItemAddEditTextIdBook"/>
 
     <TextView
-        android:id="@+id/editTextNameBook"
+        android:id="@+id/bookItemAddEditTextNameBook"
         android:text="@string/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editIdBook"/>
+        app:layout_constraintTop_toBottomOf="@+id/bookItemAddEditIdBook"/>
     <EditText
-        android:id="@+id/editNameBook"
+        android:id="@+id/bookItemAddEditNameBook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNameBook" />
+        app:layout_constraintTop_toBottomOf="@+id/bookItemAddEditTextNameBook" />
     <TextView
-        android:id="@+id/editTextAuthorBook"
+        android:id="@+id/bookItemAddEditTextAuthorBook"
         android:text="@string/author"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editNameBook"/>
+        app:layout_constraintTop_toBottomOf="@+id/bookItemAddEditNameBook"/>
     <EditText
-        android:id="@+id/editAuthorBook"
+        android:id="@+id/bookItemAddEditAuthorBook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAuthorBook" />
+        app:layout_constraintTop_toBottomOf="@+id/bookItemAddEditTextAuthorBook" />
     <TextView
-        android:id="@+id/editTextYearReleaseBook"
+        android:id="@+id/bookItemAddEditTextYearReleaseBook"
         android:text="@string/year_release_book"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editAuthorBook"/>
+        app:layout_constraintTop_toBottomOf="@+id/bookItemAddEditAuthorBook"/>
 
     <EditText
-        android:id="@+id/editYearRealeaseBook"
+        android:id="@+id/bookItemAddEditYearRealeaseBook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextYearReleaseBook" />
+        app:layout_constraintTop_toBottomOf="@+id/bookItemAddEditTextYearReleaseBook" />
     <TextView
-        android:id="@+id/editTextYearToLibraryBook"
+        android:id="@+id/bookItemAddEditTextYearToLibraryBook"
         android:text="@string/time_to_return_book"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editYearRealeaseBook"/>
+        app:layout_constraintTop_toBottomOf="@+id/bookItemAddEditYearRealeaseBook"/>
 
     <EditText
-        android:id="@+id/editYearToLibraryBook"
+        android:id="@+id/bookItemAddEditYearToLibraryBook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextYearToLibraryBook" />
+        app:layout_constraintTop_toBottomOf="@+id/bookItemAddEditTextYearToLibraryBook" />
     <TextView
-        android:id="@+id/editTextDateIssueBook"
+        android:id="@+id/bookItemAddEditTextDateIssueBook"
         android:text="@string/date_issue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editYearToLibraryBook"/>
+        app:layout_constraintTop_toBottomOf="@+id/bookItemAddEditYearToLibraryBook"/>
 
     <EditText
-        android:id="@+id/editDateIssueBook"
+        android:id="@+id/bookItemAddEditDateIssueBook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDateIssueBook" />
+        app:layout_constraintTop_toBottomOf="@+id/bookItemAddEditTextDateIssueBook" />
+    <Button
+        android:id="@+id/bookItemAddExamplar"
+        android:text="Add Examplar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bookItemAddEditDateIssueBook"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/editRVCopies"
+        android:id="@+id/addRVCopies"
         android:layout_width="match_parent"
         android:layout_height="256dp"
         android:background="@color/purple_200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editDateIssueBook" />
+        app:layout_constraintTop_toBottomOf="@+id/bookItemAddExamplar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

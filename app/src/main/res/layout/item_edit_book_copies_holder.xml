@@ -67,26 +67,8 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextBookCopiesPointId"
         app:layout_constraintStart_toStartOf="parent"
         android:minHeight="48dp"
-        android:minWidth="32dp"
-        />
+        android:minWidth="32dp"/>
 
-    <Button
-        android:id="@+id/editBtnBookCopies"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingStart="15dp"
-        android:text="Редактировать"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editBookCopiesPointId" />
-
-    <Button
-        android:id="@+id/deleteBtnBookCopies"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Удалить"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editBtnBookCopies"
-        app:layout_constraintTop_toBottomOf="@+id/editBookCopiesPointId" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
